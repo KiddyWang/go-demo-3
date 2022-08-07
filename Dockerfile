@@ -1,8 +1,6 @@
 FROM golang:1.18 AS build
 ADD . /src
 WORKDIR /src
-RUN go mod init modulename
-RUN go mod tidy
 RUN go test --cover -v ./... --run UnitTest
 RUN go build -v -o go-demo
 
