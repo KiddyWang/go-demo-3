@@ -3,6 +3,9 @@ ADD . /src
 WORKDIR /src
 RUN go mod init modulename
 RUN go mod tidy
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.io,direct
+RUN go mod download
 RUN go test --cover -v ./... --run UnitTest
 RUN go build -v -o go-demo
 
