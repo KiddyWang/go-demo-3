@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: docker
-    image: docker:18.03-git
+    image: docker:19.03-git
     command: ["sleep"]
     args: ["100000"]
     volumeMounts:
@@ -16,7 +16,7 @@ spec:
       mountPath: /var/run/docker.sock
     workingDir: /workspace
   - name: kubectl
-    image: vfarcic/kubectl
+    image: objecthuang/kubectl
     command: ["sleep"]
     args: ["100000"]
     volumeMounts:
