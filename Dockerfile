@@ -6,7 +6,7 @@ RUN go build -v -o go-demo
 
 
 
-FROM alpine:3.4
+FROM alpine:3.15
 
 RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
