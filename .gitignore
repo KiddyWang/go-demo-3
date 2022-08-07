@@ -1,2 +1,4 @@
 /go-demo
 /tmp
+go.sum
+go.mod
