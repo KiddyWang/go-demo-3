@@ -17,8 +17,8 @@ spec:
         backend:
           service:
             name: api
-          port: 
-            number: 8080
+            port: 
+              number: 8080
 
 ---
 
