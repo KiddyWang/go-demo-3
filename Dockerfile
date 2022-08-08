@@ -5,8 +5,7 @@ ENV GOPROXY=https://goproxy.io,direct
 
 ADD . /src
 WORKDIR /src
-RUN go 
-RUN go env -w GOPROXY=https://goproxy.io,direct
+
 RUN go mod init modulename
 RUN go mod tidy
 RUN go test --cover -v ./... --run UnitTest
