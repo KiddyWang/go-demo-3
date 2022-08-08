@@ -15,8 +15,10 @@ spec:
       paths:
       - path: /beta/demo
         backend:
-          serviceName: api
-          servicePort: 8080
+          service:
+            name: api
+          port: 
+            number: 8080
 
 ---
 
