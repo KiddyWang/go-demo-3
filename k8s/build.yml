@@ -1,4 +1,4 @@
-apiVersion: extensions/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api
@@ -178,5 +178,6 @@ spec:
   ports:
   - name: http
     port: 8080
+  type: LoadBalancer
   selector:
     app: api
