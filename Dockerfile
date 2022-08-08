@@ -1,7 +1,7 @@
 FROM golang:1.18 AS build
 
 ENV GO111MODULE=on
-ENV GOPROXY=https://goproxy.cn
+ENV GOPROXY=https://goproxy.cn,direct
 
 ADD . /src
 WORKDIR /src
