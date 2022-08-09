@@ -3,12 +3,15 @@ kind: Ingress
 metadata:
   name: api
   namespace: go-demo-3-build
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: "/demo"
 spec:
   rules:
-  - host: www.godemo3.org
+  - host: *
     http:
       paths:
-      - path: /demo
+      - path: /beta/demo
         pathType: Prefix
         backend:
           service:
