@@ -2,3 +2,5 @@
 /tmp
 go.sum
 go.mod
+_debug_bin
+/.vscode
