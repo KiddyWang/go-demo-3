@@ -8,8 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: "/demo"
 spec:
   rules:
-  - host: *
-    http:
+  - http:
       paths:
       - path: /beta/demo
         pathType: Prefix
