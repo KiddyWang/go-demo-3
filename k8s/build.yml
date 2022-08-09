@@ -5,7 +5,7 @@ metadata:
   namespace: go-demo-3-build
 spec:
   rules:
-  - host: 172.128.18.111
+  - host: www.godemo3.org
     http:
       paths:
       - path: /beta
