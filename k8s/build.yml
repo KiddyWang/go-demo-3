@@ -8,7 +8,7 @@ spec:
   - host: www.godemo3.org
     http:
       paths:
-      - path: /beta
+      - path: /
         pathType: Prefix
         backend:
           service:
