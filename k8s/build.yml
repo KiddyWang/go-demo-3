@@ -5,12 +5,12 @@ metadata:
   namespace: go-demo-3-build
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: "/demo"
+    nginx.ingress.kubernetes.io/rewrite-target: /demo/$2
 spec:
   rules:
   - http:
       paths:
-      - path: /beta/demo
+      - path: /beta/demo(/|$)(.*)
         pathType: Prefix
         backend:
           service:
