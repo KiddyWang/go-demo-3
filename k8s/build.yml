@@ -5,7 +5,8 @@ metadata:
   namespace: go-demo-3-build
 spec:
   rules:
-  - http:
+  - host: 172.128.18.111
+    http:
       paths:
       - path: /beta
         pathType: Prefix
