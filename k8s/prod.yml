@@ -1,21 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api
-  namespace: go-demo-3
+  namespace: go-demo-3-build
   annotations:
-    kubernetes.io/ingress.class: nginx
-    ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
   - http:
       paths:
       - path: /demo
+        pathType: Prefix
         backend:
-          serviceName: api
-          servicePort: 8080
-
+          service:
+            name: api
+            port: 
+              number: 8080
+  ingressClassName: nginx
 ---
 
 apiVersion: v1
@@ -27,7 +28,7 @@ metadata:
 ---
 
 kind: Role
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: db
   namespace: go-demo-3
@@ -38,7 +39,7 @@ rules:
 
 ---
 
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: db
@@ -53,7 +54,7 @@ subjects:
 
 ---
 
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: db
@@ -127,7 +128,7 @@ spec:
 
 ---
 
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
