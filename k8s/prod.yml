@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api
-  namespace: go-demo-3-build
+  namespace: go-demo-3
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
