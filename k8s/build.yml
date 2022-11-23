@@ -146,7 +146,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: objecthuang/go-demo-3:latest
+        image: flesh222/go-demo-3:latest
         env:
         - name: DB
           value: db
