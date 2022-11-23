@@ -16,7 +16,7 @@ spec:
       mountPath: /var/run/docker.sock
     workingDir: /workspace
   - name: kubectl
-    image: objecthuang/kubectl
+    image: flesh222/kubectl
     command: ["sleep"]
     args: ["100000"]
     volumeMounts:
